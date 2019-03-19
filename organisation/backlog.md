@@ -9,3 +9,4 @@
 - https://t2informatik.de/wissen-kompakt/backlog/
 - https://www.scruminc.com/definition-of-ready/
 - https://de.wikipedia.org/wiki/Minimum_Viable_Product
+Namen

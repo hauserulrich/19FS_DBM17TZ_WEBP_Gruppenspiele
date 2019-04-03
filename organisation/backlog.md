@@ -15,11 +15,10 @@ Namen
   - Welcome-Seite
   - Seite Team hinzufügen
     * Pro Gruppe jeweils 4 Teams
-  - Seite für Gruppenliste 
-  - Seite mit Gruppen inklusive aktueller Punktestand
-  - Rangliste erstellen
+  - Seite für Gruppen und aktuellen Punktestand
+    * Rangliste erstellen
     * Maximale Punktzahl eines Teams ist 9 Punkte
-  - Seite für den Spielplan
+  - Seite für den Spielplan und Ergebnisse einfügen
   
 ## Aufbau erste Seite
   - Titel
@@ -34,8 +33,8 @@ Namen
   
 ## Datenbankdesign (Info: Dozent bereitet Datenbank vor, sobald Design und Abhängigkeit erstellt ist)
    - Teams erfassen
-    * Teamname
-    * eventuell falls Zeit vorhanden Gruppenmitgleider erfassen
+      * Teamname
+      * eventuell falls Zeit vorhanden Gruppenmitgleider erfassen
      
 ### Abhängigkeit in der Datenbank 
   - Jedes Team gehört einer Gruppe an 

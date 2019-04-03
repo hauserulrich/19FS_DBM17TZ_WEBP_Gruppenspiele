@@ -13,31 +13,30 @@ Namen
 
 ## Aufbau der Webpage
   - Welcome-Seite
-  - Seite Teilnehmer hinzufügen
-  - Gruppenliste
-  - Seite mit Gruppen inklusive aktueller Punktestand und Rangliste
-  - Spielplan
+  - Seite Team hinzufügen
+    * Pro Gruppe jeweils 4 Teams
+  - Seite für Gruppenliste 
+  - Seite mit Gruppen inklusive aktueller Punktestand
+  - Rangliste erstellen
+    * Maximale Punktzahl eines Teams ist 9 Punkte
+  - Seite für den Spielplan
   
 ## Aufbau erste Seite
   - Titel
   - Button Neue Gruppe hinzufügen
     * Name der Gruppe
-    * Name der Speiler in Tabelle (Name 1, Name 2 ... inkl. Spieler hinzufügen und löschen)
-  - Button zum Spielplan (Idee: jeder Spielt gegen jeden)
+    * Name der Teams (Name 1, Name 2 ...)
+  - Button zum Spielplan (Idee: jeder spielt gegen jeden)
     * Gruppe auswählen
     * Tabelle mit einzelnen Spielpaarungen für jede Gruppe erstellen
   - Raster der jeweiligen Gruppen (Gruppe 1, Gruppe 2, Gruppe 3...)
     * in Raster Manschaftsname
   
 ## Datenbankdesign (Info: Dozent bereitet Datenbank vor, sobald Design und Abhängigkeit erstellt ist)
-  - Sportler
-    * Name
-    * Vorname
-    * Ort
-    * Gruppenname
-    * Gruppenmitglieder
-    * Spielergebnis
-  
+   - Teams erfassen
+    * Teamname
+    * eventuell falls Zeit vorhanden Gruppenmitgleider erfassen
+     
 ### Abhängigkeit in der Datenbank 
-  - Jeder Spieler gehört einer Gruppe an 
+  - Jedes Team gehört einer Gruppe an 
    

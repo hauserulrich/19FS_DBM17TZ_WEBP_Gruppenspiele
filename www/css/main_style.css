@@ -37,11 +37,16 @@ header {
   	position: fixed;
   	top: 0;
   	transition: 0.2s;
+    z-index: 99;
 }
 
 nav {
 	font-size: 25px;
 	font-weight: 800;
+}
+
+.navbar-border {
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .bg-golden {
@@ -67,9 +72,13 @@ body {
 	font-size: 18px;
 	align-content: center;
 	padding: 0 !important;
-	margin-top: 50px;
 }
 
+/* CONTAINER
+ ========================================================================== */
+.container {
+    margin-top: 75px;
+}
 
 
 /* Bereich Seiteninhalt über 12 Spalten
@@ -79,7 +88,7 @@ body {
 	margin-top: 10%;
 	margin-bottom: 10%;
 	padding: 20px;
-	background: rgba(255,255,255,0.95);
+	background: rgba(255,255,255,0.9);
 	border-radius: 20px;
 }
 
@@ -224,7 +233,6 @@ ol > li > ul {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	text-align: center;
-	margin-bottom: 50px;
 	float: inherit;
 }
 .logo {

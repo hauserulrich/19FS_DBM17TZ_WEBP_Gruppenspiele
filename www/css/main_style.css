@@ -1,0 +1,279 @@
+@font-face {
+	font-family: "MoreSugar Regular";
+	src: url("../fonts/MoreSugar-Regular.otf");
+}
+
+@font-face {
+	font-family: 'Orion Sans';
+	src: url("../fonts/OrionSans-Regular.ttf");
+}
+
+/* HTML allgemein
+ ========================================================================== */
+html {
+  /* 1 */
+  font: normal 14px / 20px 'Orion Sans';
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  background: #ffffff;
+  color: #363533;
+}
+
+/* COLORS
+ ========================================================================== */
+ /*#ffc722
+*/
+
+
+/* NAVIGATION
+ ========================================================================== */
+header {
+	width: 100%;
+	text-align: center;
+  	font-size: 90px; 
+  	font-weight: bold;
+  	position: fixed;
+  	top: 0;
+  	transition: 0.2s;
+    z-index: 99;
+}
+
+nav {
+	font-size: 25px;
+	font-weight: 800;
+}
+
+.navbar-border {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.bg-golden {
+  /* The image used */
+  background-image: url("../images/bg-golden.jpg");
+
+  /* Full height */
+  width: 100%; 
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* BODY
+ ========================================================================== */
+body {
+	background-image: url("../images/emotion-bg.jpg");
+	background-size: cover;
+	background-repeat: repeat-y;
+	font-size: 18px;
+	align-content: center;
+	padding: 0 !important;
+}
+.table {
+	border: 1px solid black;
+}
+.tg  {
+    border-collapse:collapse;border-spacing:0;
+}
+
+.tg td {
+    font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;
+}
+
+.tg th {
+    font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;
+}
+
+.tg .tg-6eq8 {
+    color:#333333
+}
+
+.tg .tg-j6a4 {
+    font-size:15px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:#ffe02f;color:#333333
+}
+.tg .tg-gn9g {
+    font-size:14px;color:#333333
+}
+
+
+/* CONTAINER
+ ========================================================================== */
+.container {
+    margin-top: 75px;
+}
+
+
+/* Bereich Seiteninhalt über 12 Spalten
+ ========================================================================== */
+
+.col-sm-12 {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	padding: 20px;
+	background: rgba(255,255,255,0.9);
+	border-radius: 20px;
+}
+
+.row {
+	
+}
+/* Links
+ ========================================================================== */
+/*
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent;
+}
+/*
+ * Improve readability of focused elements when they are also in an active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/*
+ * Style
+ */
+a,
+.link {
+  color: #363533;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover,
+.link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+span {
+	color: #ffc722;
+}
+
+pre {
+	color: white;
+}
+
+/* Headings
+ ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px;
+  font-family: 'MoreSugar Regular';
+  color: #363533;
+  text-transform: none;
+}
+/*
+ * Margins
+ */
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-top: 25px;
+}
+/*
+ * Sizes
+ */
+h1 {
+  font-size: 50px;
+  line-height: 50px;
+	text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+h5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+h6 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+
+p{
+	font: 'Orion Sans';
+	padding: inherit;
+}
+/* Listen
+ ========================================================================== */
+ul,
+ol {
+  padding-left: 30px;
+}
+/*
+ * Reset margin for nested lists
+ */
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul {
+  margin: 0;
+}
+
+
+/*
+.yellow-scheme {
+  color: #ffc722 !important;
+}
+.yellow-scheme:hover {
+  color: #fff;
+}
+*/
+
+/* Gruppenübersicht Tabelle
+ ========================================================================== */
+
+table, th, td {
+    border: 1px solid;
+    width: 1100px;
+}
+
+/* Footer
+ ========================================================================== */
+
+.footer {
+	background-image: url("../images/bg-golden.jpg");
+	background-repeat: no-repeat;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+	float: inherit;
+}
+.logo {
+	font-weight: bold;
+}
+
+.copyrights {
+    width: 100%;
+	font: italic;
+	font-size: 13px;
+  }

@@ -50,7 +50,8 @@
                 </form>
                 
                 <h2>Folgende Teams sind dabei:</h2>
-                <div id="data-target"></div>
+                <p>Frankreich</p>
+                <p>Belgien</p>
 			</div>
 		</div>
 	</div>
@@ -60,28 +61,6 @@
 		<div class="footer-text">Semesterarbeit des Digital Business Management Studiengangs 2017 Vollzeit</div><br>
 		<div class="copyrights">Copyright © 2019 DBM17VZ. All Rights Reserved.</div>
 	</div>
-    
-    <script>
-        function init(){
-            $.ajax({url: "gruppenspiel-info.json"}).done(done).fail(fail);
-        }
-
-        function done(data){
-            var content = "";
-            for(var i in data.teams) {
-                inhalt = data.teams[i];
-                content += "<p>" + inhalt + "</p>";
-            }
-            $("#data-target").html(content);
-        }
-
-        function fail(data){
-            alert("fail" + data);
-        }
-
-        $(document).ready(init);
-    
-    </script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `begegnung`
+-- Tabellenstruktur für Tabelle `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung`
 --
 
-CREATE TABLE `begegnung` (
+CREATE TABLE `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (
   `id` int(11) NOT NULL,
   `team1_id` int(11) NOT NULL,
   `team2_id` int(11) NOT NULL,
@@ -39,10 +39,10 @@ CREATE TABLE `begegnung` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `team`
+-- Tabellenstruktur für Tabelle `19FS_DBM17TZ_WEBP_Gruppenspiele_team`
 --
 
-CREATE TABLE `team` (
+CREATE TABLE `19FS_DBM17TZ_WEBP_Gruppenspiele_team` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `gruppen_id` int(11) NOT NULL
@@ -53,15 +53,15 @@ CREATE TABLE `team` (
 --
 
 --
--- Indizes für die Tabelle `begegnung`
+-- Indizes für die Tabelle `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung`
 --
-ALTER TABLE `begegnung`
+ALTER TABLE `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `team`
+-- Indizes für die Tabelle `19FS_DBM17TZ_WEBP_Gruppenspiele_team`
 --
-ALTER TABLE `team`
+ALTER TABLE `19FS_DBM17TZ_WEBP_Gruppenspiele_team`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -69,15 +69,15 @@ ALTER TABLE `team`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `begegnung`
+-- AUTO_INCREMENT für Tabelle `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung`
 --
-ALTER TABLE `begegnung`
+ALTER TABLE `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT für Tabelle `team`
+-- AUTO_INCREMENT für Tabelle `19FS_DBM17TZ_WEBP_Gruppenspiele_team`
 --
-ALTER TABLE `team`
+ALTER TABLE `19FS_DBM17TZ_WEBP_Gruppenspiele_team`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

@@ -34,7 +34,7 @@ return: statement object
 
 Example: `teamnames.php`
 
-## Seite Gruppenuebersicht
+## Groups
 
 ### Request teams and groups
 
@@ -54,34 +54,39 @@ return: statement object
 
 Example: `gamesofteam.php?id=2`
 
-## Seite Begegnungen
+## Games plan
 
-##Abfrage Teams
+## Teams
 
-* Teamname
-* Team-id
-* Gruppen-ID
-* begegnungen (vollständig)
+URL: games.php
+return: statement object
 
-### Abfrage Begegnungsdaten
-* Gruppe
-* Begegnung
-* team-name
-* team-name
-* punkte1
-* punkte2
+* in case of success, all games are returned as an array
+* in case of failure the statement holds error information
+
+Example: `games.php`
+
+### Manage results
 
 URL: teamingroups.php -> see *Request teams and groups*
-URL: gameadd.php?team1=xyz&team=xyz
-URL: games.php -> team-id ersetzt durch teamnamen
+
+URL: resultadd.php?team1\_id=xy&team2\_id=xy&punkte\_team1=xy&punkte\_team2=xy
+return: statement object
+
+* in case of success, the id of the game is returned
+* in case of failure the statement holds error information
+
+Example: `resultadd.php?team1_id=1&team2_id=4&punkte_team1=2&punkte_team2=0`
+
+URL: games.php -> see *Teams*
 
 ### Register game
 
-URL: resultadd.php?team1\_id=xy&team2\_id=xy&punkte\_team1=xy&punkte\_team2=xy
+URL: resultadd.php?team1\_id=xy&team2\_id=xy
 return: statement object
 
 * in case of success, the id of the new game is returned
 * in case of failure the statement holds error information
 
-Example: `resultadd.php?team1_id=1&team2_id=4&punkte_team1=2&punkte_team2=0`
+Example: `resultadd.php?team1_id=1&team2_id=4`
 

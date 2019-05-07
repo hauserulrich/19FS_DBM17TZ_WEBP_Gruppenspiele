@@ -8,8 +8,10 @@ The DB structure is available in the file gruppenspiel.sql
 The returned JSON objects adhere to the column headers corresponding to the SQL query matching the http request.
 
 ## Access
-all URL's are given as a php target in the folder `db` of the web page itself
+all URL's are given as a php target in the folder `db` of the web page itself.
+
 Example URL: `all.php` -> location: `http://server/db/all.php`
+
 At present the server is located at: http://767727-7.web1.fh-htwchur.ch/19FS_DBM17TZ_WEBP_Gruppenspiele
 
 ## Registration/Team
@@ -17,6 +19,7 @@ At present the server is located at: http://767727-7.web1.fh-htwchur.ch/19FS_DBM
 ### Enter team
 
 URL: teamadd.php?name=xxxx&groupid=xyz
+
 return: statement object
 
 * in case of success, the id of the new team is returned
@@ -27,6 +30,7 @@ Example: `teamadd.php?name=name1&gruppen_id=1`
 ### Request teams
 
 URL: teamnames.php
+
 return: statement object
 
 * in case of success, the team names are returned as an array
@@ -39,6 +43,7 @@ Example: `teamnames.php`
 ### Request teams and groups
 
 URL: teamingroups.php
+
 return: statement object
 
 * in case of success, the complete team records (team id, name and group id) are returned as an array
@@ -47,6 +52,7 @@ return: statement object
 Example: `teamingroups.php`
 
 URL: gamesofteam.php?teamid=xyz
+
 return: statement object
 
 * in case of success, the games are returned as an array
@@ -59,6 +65,7 @@ Example: `gamesofteam.php?id=2`
 ## Teams
 
 URL: games.php
+
 return: statement object
 
 * in case of success, all games are returned as an array
@@ -71,6 +78,7 @@ Example: `games.php`
 URL: teamingroups.php -> see *Request teams and groups*
 
 URL: resultadd.php?team1\_id=xy&team2\_id=xy&punkte\_team1=xy&punkte\_team2=xy
+
 return: statement object
 
 * in case of success, the id of the game is returned
@@ -83,6 +91,7 @@ URL: games.php -> see *Teams*
 ### Register game
 
 URL: resultadd.php?team1\_id=xy&team2\_id=xy
+
 return: statement object
 
 * in case of success, the id of the new game is returned

@@ -13,4 +13,5 @@ function ajaxFailed()
     alert("Error");
 }
 
+
 window.onload=init;

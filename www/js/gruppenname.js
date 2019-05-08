@@ -1,5 +1,5 @@
 function init(){
-    $.ajax({url: "db/teamnames.php"}).done(receivedteamnames).fail(ajaxFailed);
+    $.ajax({url: "../db/teamnames.php"}).done(receivedteamnames).fail(ajaxFailed);
 }
 
 function receivedteamnames(data){

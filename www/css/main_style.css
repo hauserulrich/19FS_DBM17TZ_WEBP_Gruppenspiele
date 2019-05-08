@@ -121,6 +121,19 @@ body {
 .row {
 	
 }
+
+/* Gruppen */
+.group{
+    float: left;
+    margin: 10px;
+    border: 1px solid black;
+    min-height: 260px;
+    border-radius: 9px;
+    padding: 7px;
+    width: 210px;
+    text-align: center;
+}
+
 /* Links
  ========================================================================== */
 /*

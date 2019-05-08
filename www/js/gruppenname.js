@@ -3,7 +3,7 @@ function init(){
 }
 
 function receivedteamnames(data){
-    var data_arr = data;
+    var data_arr = JSON.parse(data);
     var content = "";
     for(var i in data_arr) {
         inhalt = data_arr[i];

@@ -222,6 +222,8 @@ h6 {
 p{
 	font: 'Orion Sans';
 	padding: inherit;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 /* Listen
  ========================================================================== */

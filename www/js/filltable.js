@@ -10,7 +10,7 @@ function receivedTeamingroups(data)
 
 function ajaxFailed() 
 {
-    
+    alert("Error");
 }
 
 window.onload=init;

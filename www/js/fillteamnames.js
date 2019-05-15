@@ -26,7 +26,8 @@ function receivedteamnames(data){
             content += '<tr>';
                 content += '<th class="tg-6eq8">' + data_arr[0].name; + '</th>';
                 content += '<th class="tg-6eq8">' + data_arr[1].name; + '</th>';
-                content += '<th class="tg-6eq8">' + '<input id="0l" m_id="data_arr[0].id" type="text" class="form-control" value="0">' + '</th>';
+                content += '<th class="tg-6eq8">' + '<input type="text" class="form-control" value="0">' + '</th>';
+                //content += '<th class="tg-6eq8">' + '<input id="0l" m_id="data_arr[0].id" type="text" class="form-control" value="0">' + '</th>';
                 content += '<th class="tg-6eq8">' + '<input type="text" class="form-control" value="0">' + '</th>';
                 content += '<th class="tg-6eq8">' + '<button type="submit" class="btn btn-light">Bestätigen</button>' + '</th>';
             content += '<tr>';

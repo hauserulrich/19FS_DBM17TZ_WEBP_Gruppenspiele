@@ -20,12 +20,15 @@ function receivedteamnames(data){
             content += '<tr>';
                 content += '<th class="tg-j6a4">Team 1</th>';
                 content += '<th class="tg-j6a4">Team 2</th>';
-                for(var q in data_arr){
-                    if(data_arr[q].gruppen_id == gruppen[i]){
-                        content += '<th class="tg-j6a4">' + data_arr[q].name; + '</th>';
-                    }
-                }
             content += '</tr>';
+            for(var q in data_arr){
+                if(data_arr[q].gruppen_id == gruppen[i]){
+                    content += '<tr>';
+                        content += '<th class="tg-j6a4">' + data_arr[q].name; + '</th>';
+                    content += '<tr>';
+                }
+            }
+            
         content += '</table>';
         
     }

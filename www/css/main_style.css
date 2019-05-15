@@ -119,6 +119,13 @@ body {
 }
 
 .col-sm-6 {
+	margin-top: 0%;
+	margin-bottom: 0%;
+	padding: 0px;
+	background: rgba(255,255,255,0.9);
+	border-radius: 20px;
+}
+
 .row {
 	
 }

@@ -25,6 +25,14 @@ function receivedteamnames(data){
                 if(data_arr[q].gruppen_id == gruppen[i]){
                     content += '<tr>';
                         content += '<th class="tg-6eq8">' + data_arr[q].name; + '</th>';
+                        for(var w in data_arr){
+                            if(data_arr[w].gruppen_id == gruppen[i]){
+                                if(data_arr[w].name != data_arr[q].name){
+                                    content += '<th class="tg-6eq8">' + data_arr[w].name; + '</th>';
+                                    break;
+                                }
+                            }
+                        }
                     content += '<tr>';
                 }
             }

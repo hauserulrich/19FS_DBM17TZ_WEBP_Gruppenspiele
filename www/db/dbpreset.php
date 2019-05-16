@@ -17,7 +17,8 @@ $json = "[";
 foreach ($teams as $key => $value) {
 	try
 	{
-		$group = $key % 4;
+        // intdiv um die teams in gruppen nicht groesser als 4 zu verteilen
+		$group = intdiv($key, 4);
 		$sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_team` (`id`, `name`, `gruppen_id`) VALUES (NULL, '$value', '$group')";
 		$db->query($sqlQuery);
 		if (null !== $db->lastInsertId()) {

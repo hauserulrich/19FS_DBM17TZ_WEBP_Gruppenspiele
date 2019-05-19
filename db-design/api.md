@@ -14,6 +14,22 @@ Example URL: `all.php` -> location: `http://server/db/all.php`
 
 At present the server is located at: http://767727-7.web1.fh-htwchur.ch/19FS_DBM17TZ_WEBP_Gruppenspiele
 
+## Preset
+
+URL: dbwipe.php
+
+return: statement object
+
+* in case of success, the db is wiped, all tables are emptied
+* in case of failure the statement holds error information
+
+URL: dbpreset.php
+
+return: statement object
+
+* in case of success, the db is preset with the german Bundesliga soccer teams 2018/2019 with groups by 4
+* in case of failure the statement holds error information
+
 ## Registration/Team
 
 ### Enter team
@@ -98,4 +114,5 @@ return: statement object
 * in case of failure the statement holds error information
 
 Example: `resultadd.php?team1_id=1&team2_id=4`
+
 

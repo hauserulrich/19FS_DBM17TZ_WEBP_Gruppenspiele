@@ -39,7 +39,8 @@ testGet();
 
 $team1_id = $_GET['team1_id'];
 $team2_id = $_GET['team2_id'];
-$teamAdd = false;
+$teamAdd = true;
+$results = true;
 if (array_key_exists('punkte_team1', $_GET) || array_key_exists('punkte_team2', $_GET)) {
 //add a result
     if (!array_key_exists('punkte_team1', $_GET) || !array_key_exists('punkte_team2', $_GET)) {
@@ -52,7 +53,7 @@ if (array_key_exists('punkte_team1', $_GET) || array_key_exists('punkte_team2', 
         $punkte_team2 = $_GET['punkte_team2'];
     }
 } else {
-    $teamAdd = true;
+    $results = false;
 }
 try
 {
@@ -68,12 +69,23 @@ try
             die(); //end of script
         } else {
             //game does not exist
-            //new member
-            $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '0','0')";
-            $db->query($sqlQuery);
-            if (null !== $db->lastInsertId()) {
-                $json = "{\"id\":" . $db->lastInsertId() . "}";
-                echo $json;
+            //new member with results given
+            if($results){
+                $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '$punkte_team1','$punkte_team2')";
+                $db->query($sqlQuery);
+                if (null !== $db->lastInsertId()) {
+                    $json = "{\"id\":" . $db->lastInsertId() . "}";
+                    echo $json;
+                }
+            }
+            //new member with no results given
+            else{
+                $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '0','0')";
+                $db->query($sqlQuery);
+                if (null !== $db->lastInsertId()) {
+                    $json = "{\"id\":" . $db->lastInsertId() . "}";
+                    echo $json;
+                }
             }
         }
     } else {

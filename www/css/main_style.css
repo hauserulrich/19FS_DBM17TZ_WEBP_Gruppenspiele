@@ -21,11 +21,6 @@ html {
   color: #363533;
 }
 
-/* COLORS
- ========================================================================== */
- /*#ffc722
-*/
-
 
 /* NAVIGATION
  ========================================================================== */
@@ -44,19 +39,16 @@ nav {
 	font-size: 25px;
 	font-weight: 800;
 }
-
+.active {
+    color: #fff;
+}
 .navbar-border {
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .bg-golden {
-  /* The image used */
   background-image: url("../images/bg-golden.jpg");
-
-  /* Full height */
-  width: 100%; 
-
-  /* Center and scale the image nicely */
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -67,36 +59,68 @@ nav {
  ========================================================================== */
 body {
 	background-image: url("../images/emotion-bg.jpg");
-	background-size: cover;
-	background-repeat: repeat-y;
+	background-size: contain;
 	font-size: 18px;
 	align-content: center;
 	padding: 0 !important;
 }
-.table {
-	border: 1px solid black;
-}
-.tg  {
-    border-collapse:collapse;border-spacing:0;
-}
 
-.tg td {
-    font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;
+/* Custom Inhalt
+ ========================================================================== */
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
 }
-
-.tg th {
-    font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;
+.start {
+    min-height: 260px;
+    text-align: center;
 }
-
-.tg .tg-6eq8 {
+.start h2 {
+    font-size: 23px;
+    line-height: 23px;
+}
+.start a {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 16px;
+    font-family: 'MoreSugar Regular';
+}
+.col-sm-12 {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	padding: 20px;
+	background: rgba(255,255,255,0.9);
+	border-radius: 20px;
+}
+table {
+	width: 100%;
+}
+th {
+    border: 1px solid black;
+    padding:10px 5px;
+    background-color:#ffe02f;
     color:#333333
 }
-
-.tg .tg-j6a4 {
-    font-size:15px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:#ffe02f;color:#333333
+td {
+    border: 1px solid black;
+    padding: 5px;
 }
-.tg .tg-gn9g {
-    font-size:14px;color:#333333
+.group {
+    float: left;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 7px;
+    width: calc(33% - 17px);
+    text-align: center;
+    min-height: 365px;
+}
+button {
+    font-family: 'MoreSugar Regular';
+}
+button#teamsubmit {
+    float: right;
+    font-size: 19px;
 }
 
 
@@ -106,178 +130,42 @@ body {
     margin-top: 75px;
 }
 
-
-/* Bereich Seiteninhalt über 12 Spalten
- ========================================================================== */
-
-.col-sm-12 {
-	margin-top: 10%;
-	margin-bottom: 10%;
-	padding: 20px;
-	background: rgba(255,255,255,0.9);
-	border-radius: 20px;
-}
-
-.col-sm-6 {
-	margin-top: 0%;
-	margin-bottom: 0%;
-	padding: 0px;
-	background: rgba(255,255,255,0.9);
-	border-radius: 20px;
-}
-
-.row {
-	
-}
-
-/* Gruppen */
-.group{
-    float: left;
-    margin: 10px;
-    border: 1px solid black;
-    min-height: 260px;
-    border-radius: 9px;
-    padding: 7px;
-    width: 210px;
-    text-align: center;
-}
-
 /* Links
  ========================================================================== */
-/*
- * Remove the gray background color from active links in IE 10.
- */
-a {
-  background: transparent;
-}
-/*
- * Improve readability of focused elements when they are also in an active/hover state.
- */
-a:active,
-a:hover {
-  outline: 0;
-}
-/*
- * Style
- */
-a,
-.link {
+a, .link {
   color: #363533;
   text-decoration: none;
   cursor: pointer;
 }
-a:hover,
-.link:hover {
+a:hover, .link:hover {
   color: white;
   text-decoration: underline;
 }
 
-b,
-strong {
-  font-weight: bold;
-}
-
-span {
-	color: #ffc722;
-}
-
-pre {
-	color: white;
-}
-
 /* Headings
  ========================================================================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2 {
   margin: 20px;
   font-family: 'MoreSugar Regular';
   color: #363533;
-  text-transform: none;
 }
-/*
- * Margins
- */
-* + h1,
-* + h2,
-* + h3,
-* + h4,
-* + h5,
-* + h6 {
+* + h1, * + h2 {
 	margin-top: 25px;
 }
-/*
- * Sizes
- */
 h1 {
-  font-size: 50px;
-  line-height: 50px;
-	text-align: center;
+  font-size: 40px;
+  line-height: 40px;
+    text-align: center;
 }
-
 h2 {
   font-size: 32px;
   line-height: 40px;
 }
-h3 {
-  font-size: 24px;
-  line-height: 30px;
-}
-h4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-h5 {
-  font-size: 14px;
-  line-height: 20px;
-}
-h6 {
-  font-size: 12px;
-  line-height: 18px;
-}
-
-
-p{
+p {
 	font: 'Orion Sans';
 	padding: inherit;
     padding-top: 0;
     padding-bottom: 0;
-}
-/* Listen
- ========================================================================== */
-ul,
-ol {
-  padding-left: 30px;
-}
-/*
- * Reset margin for nested lists
- */
-ul > li > ul,
-ul > li > ol,
-ol > li > ol,
-ol > li > ul {
-  margin: 0;
-}
-
-
-/*
-.yellow-scheme {
-  color: #ffc722 !important;
-}
-.yellow-scheme:hover {
-  color: #fff;
-}
-*/
-
-/* Gruppenübersicht Tabelle
- ========================================================================== */
-
-table, th, td {
-    border: 1px solid;
-    width: 1100px;
 }
 
 /* Footer
@@ -294,9 +182,8 @@ table, th, td {
 .logo {
 	font-weight: bold;
 }
-
 .copyrights {
     width: 100%;
 	font: italic;
 	font-size: 13px;
-  }
+}

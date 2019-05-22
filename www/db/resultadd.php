@@ -39,7 +39,6 @@ testGet();
 
 $team1_id = $_GET['team1_id'];
 $team2_id = $_GET['team2_id'];
-$teamAdd = true;
 $results = true;
 if (array_key_exists('punkte_team1', $_GET) || array_key_exists('punkte_team2', $_GET)) {
 //add a result
@@ -57,38 +56,12 @@ if (array_key_exists('punkte_team1', $_GET) || array_key_exists('punkte_team2', 
 }
 try
 {
-    if ($teamAdd) {
-        //add a new team
-        //test for game existence
-        $sqlQuery = "SELECT * FROM `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` WHERE team1_id = '$team1_id' AND team2_id = '$team2_id'";
-        $db_data = $db->query($sqlQuery);
-        if ($db_data->rowCount() > 0) {
-            //game exists
-            http_response_code(406);
-            echo "{'error': 'game exists'}";
-            die(); //end of script
-        } else {
-            //game does not exist
-            //new member with results given
-            if($results){
-                $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '$punkte_team1','$punkte_team2')";
-                $db->query($sqlQuery);
-                if (null !== $db->lastInsertId()) {
-                    $json = "{\"id\":" . $db->lastInsertId() . "}";
-                    echo $json;
-                }
-            }
-            //new member with no results given
-            else{
-                $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '0','0')";
-                $db->query($sqlQuery);
-                if (null !== $db->lastInsertId()) {
-                    $json = "{\"id\":" . $db->lastInsertId() . "}";
-                    echo $json;
-                }
-            }
-        }
-    } else {
+    //add a new team
+    //test for game existence
+    $sqlQuery = "SELECT * FROM `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` WHERE team1_id = '$team1_id' AND team2_id = '$team2_id'";
+    $db_data = $db->query($sqlQuery);
+    if ($db_data->rowCount() > 0) {
+        //game exists
         //add a result to a given team
         $sqlQuery = "UPDATE `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` SET punkte_team1 = '$punkte_team1', punkte_team2 = '$punkte_team2' WHERE team1_id = '$team1_id' AND team2_id = '$team2_id'";
         $db_result = $db->query($sqlQuery);
@@ -97,7 +70,29 @@ try
         } else {
             echo "{'error': 'SQL: update of member failed', 'query': '" . $sqlQuery . "'}";
         }
+
+    } else {
+        //game does not exist
+        //new member with results given
+        if($results){
+            $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '$punkte_team1','$punkte_team2')";
+            $db->query($sqlQuery);
+            if (null !== $db->lastInsertId()) {
+                $json = "{\"id\":" . $db->lastInsertId() . "}";
+                echo $json;
+            }
+        }
+        //new member with no results given
+        else{
+            $sqlQuery = "INSERT INTO `19FS_DBM17TZ_WEBP_Gruppenspiele_begegnung` (`id`, `team1_id`, `team2_id`, `punkte_team1`, `punkte_team2`) VALUES (NULL, '$team1_id', '$team2_id', '0','0')";
+            $db->query($sqlQuery);
+            if (null !== $db->lastInsertId()) {
+                $json = "{\"id\":" . $db->lastInsertId() . "}";
+                echo $json;
+            }
+        }
     }
+    
 } catch (PDOException $ex) {
     http_response_code(406);
     echo "{'error': 'SQL: " . $ex->getMessage() . "', 'query': '" . $sqlQuery . "'}";

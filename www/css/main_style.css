@@ -174,8 +174,8 @@ p {
 .footer {
 	background-image: url("../images/bg-golden.jpg");
 	background-repeat: no-repeat;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	text-align: center;
 	float: inherit;
 }

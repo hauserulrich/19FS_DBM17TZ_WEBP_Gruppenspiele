@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/main_style.css">
-        <title>GRUPPEN</title>
+        <title>Gruppenspiel beendet</title>
         <link rel="icon" href="images/logo.png">
     </head>
 
@@ -16,31 +16,25 @@
             <a class="navbar-brand" href="index.html">
                 <img src="images/logo.png" alt="logo" style="width:50px;">
             </a>
-            <button class="navbar-toggler navbar-light navbar-border" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="registrieren.html">REGISTRATION</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="gruppen.html">GRUPPENÜBERSICHT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="spielplan.html">SPIELPLAN</a>
-                    </li>
-                </ul>
-            </div>
         </nav>
     </header>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Gruppenübersicht</h1>
-				<div id="gruppen_content"></div>
+				<h1>Die Sieger</h1>
+                <p class="text-center">Pro Gruppe gewinnt das Team mit den meisten Punkten.</p>
+                <p class="text-center">Bei Punktegleichstand entscheidet die Anzahl Tore der Gruppenphase, sind diese gleich, entscheidet der Zufall!</p>
+                <!-- Platzhalter fuer content aus wer_hat_gewonnen.js -->
+				<div id="sieger_content"></div>
+                <!-- optionen um weiter zu fahren -->
+                <div class="clearfix"></div>
+                <div class="text-center mt-5">
+                    <h2>Wie weiter?</h2>
+                    <p>Alles löschen und mit leerer Datenbank starten <button style="font-size: 20px;" class="btn btn-dark" onClick="reset(0)">Go!</button></p>
+                    <p>Alles löschen und mit Preset-Datenbank starten <button style="font-size: 20px;" class="btn btn-dark" onClick="reset(1)">Go!</button></p>
+                    <p>So lassen und nach Hause <button style="font-size: 20px;" class="btn btn-dark" onClick="go_home()">Home</button></p>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -54,7 +48,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="js/gruppen_data.js"></script>
+  <script src="js/wer_hat_gewonnen.js"></script>
 
 </body>
 </html>

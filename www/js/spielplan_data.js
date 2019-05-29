@@ -62,8 +62,8 @@ function receivedteamnames(data){
                                     if((punkte_arr[t].team1_id == data_arr[q].id) && (punkte_arr[t].team2_id == data_arr[w].id)){
                                         content += '<td><input type="text" class="form-control" team1_id="' + data_arr[q].id + '" eintrag="' + counter + '" name="punkte_team1" value="' + punkte_arr[t].punkte_team1 + '"></td>';
                                         content += '<td><input type="text" class="form-control" team2_id="' + data_arr[w].id + '" eintrag="' + counter + '" name="punkte_team2" value="' + punkte_arr[t].punkte_team2 + '"></td>';
-                                        // moeglichkeit das resultat zu aendern
-                                        content += '<td style="border: none"><button onclick="eintragen_tore(' + counter + ')" id="' + counter + '" name="submit_tore" type="submit" class="btn btn-light">ändern</button></td>';
+                                        // moeglichkeit das resultat zu aendern, bei eintragen_tore wird die info mitgesendet, dass bereits ein eintrag existiert
+                                        content += '<td style="border: none"><button onclick="eintragen_tore(1, ' + counter + ')" id="' + counter + '" name="submit_tore" type="submit" class="btn btn-light">ändern</button></td>';
                                         // setze var auf true da resultat existiert
                                         resultat_existiert = true;
                                     }
@@ -73,8 +73,9 @@ function receivedteamnames(data){
                                     content += '<td><input type="text" class="form-control" team1_id="' + data_arr[q].id + '" eintrag="' + counter + '" name="punkte_team1" placeholder="kein Eintrag"></td>';
 
                                     content += '<td><input type="text" class="form-control" team2_id="' + data_arr[w].id + '" eintrag="' + counter + '" name="punkte_team2" placeholder="kein Eintrag"></td>';
-                                    // speichere input durch click -> eintragen_tore(counter)
-                                    content += '<td style="border: none"><button onclick="eintragen_tore(' + counter + ')" id="' + counter + '" name="submit_tore" type="submit" class="btn btn-light">eintragen</button></td>';
+                                    // speichere input durch click -> eintragen_tore(existiert, counter)
+                                    // die info das noch kein eintrag existiert wird mitgesendet
+                                    content += '<td style="border: none"><button onclick="eintragen_tore(0, ' + counter + ')" id="' + counter + '" name="submit_tore" type="submit" class="btn btn-light">eintragen</button></td>';
                                 }
                                 // erhoehe counter nach jeder zeile in ausgabetabelle
                                 counter += 1;
@@ -114,7 +115,7 @@ function register(){
 }
 
 // onclick auf "eintragen" oder "aendern"
-function eintragen_tore(counter){
+function eintragen_tore(existiert, counter){
     // erhalte punkte von inputfeld mit name punkte_team1
     var team1 = document.getElementsByName("punkte_team1");
     // gehe durch alle elemente
@@ -144,14 +145,21 @@ function eintragen_tore(counter){
         }
     }
     // sende team1_id, team2_id und punkte_team1, punkte_team2 an resultadd um die resultate zu speichern
-    // bei erfolg call eintrag_erfolgreich
-    $.ajax({url : 'http://767727-7.web1.fh-htwchur.ch/19FS_DBM17TZ_WEBP_Gruppenspiele/db/resultadd.php?team1_id='+team1_id+'&team2_id='+team2_id+'&punkte_team1='+punkte_team1+'&punkte_team2='+punkte_team2 }).done(eintrag_erfolgreich).fail(ajaxFailed);
+    // bei erfolg call eintrag_erfolgreich mit info ob eintrag bereits existierte oder neu eingetragen wurde
+    $.ajax({url : 'http://767727-7.web1.fh-htwchur.ch/19FS_DBM17TZ_WEBP_Gruppenspiele/db/resultadd.php?team1_id='+team1_id+'&team2_id='+team2_id+'&punkte_team1='+punkte_team1+'&punkte_team2='+punkte_team2 }).done(eintrag_erfolgreich(existiert)).fail(ajaxFailed);
     
 }
 
 // alert erfolgsmeldung und lade tabelle neu
-function eintrag_erfolgreich(){
-    alert("Erfolgreich eingetragen!");
+function eintrag_erfolgreich(existiert){
+    // eintrag existierte bereits und wurde evtl. veraendert
+    if(existiert){
+        alert("Eintrag neu gespeichert!");
+    }
+    // eintrag wurde neu gespeichert
+    else{
+        alert("Erfolgreich eingetragen!");
+    }
     init();
 }
 
